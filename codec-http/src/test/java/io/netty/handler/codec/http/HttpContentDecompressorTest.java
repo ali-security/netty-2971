@@ -28,7 +28,7 @@ import io.netty.handler.codec.compression.Zstd;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
- 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,9 +80,9 @@ public class HttpContentDecompressorTest {
         assertEquals(2, readCalled.get());
         assertFalse(channel.finishAndReleaseAll());
     }
-    
+
     static String[] encodings() {
-        List<String> encodings = new ArrayList<>();
+        List<String> encodings = new ArrayList<String>();
         encodings.add("gzip");
         encodings.add("deflate");
         if (Brotli.isAvailable()) {
@@ -140,7 +140,7 @@ public class HttpContentDecompressorTest {
         PooledByteBufAllocator allocator = new PooledByteBufAllocator(false);
 
         ZipBombIncomingHandler incomingHandler = new ZipBombIncomingHandler(memoryLimit);
-        EmbeddedChannel decompressChannel = new EmbeddedChannel(new HttpContentDecompressor(0), incomingHandler);
+        EmbeddedChannel decompressChannel = new EmbeddedChannel(new HttpContentDecompressor(false), incomingHandler);
         decompressChannel.config().setAllocator(allocator);
         decompressChannel.writeInbound(message);
         decompressChannel.writeInbound(new DefaultLastHttpContent(compressed));
