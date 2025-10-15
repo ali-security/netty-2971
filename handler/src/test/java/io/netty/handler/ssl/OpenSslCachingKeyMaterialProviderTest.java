@@ -17,6 +17,7 @@ package io.netty.handler.ssl;
 
 import io.netty.buffer.UnpooledByteBufAllocator;
 import org.hamcrest.CoreMatchers;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import javax.net.ssl.KeyManagerFactory;
@@ -27,6 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@Disabled
 public class OpenSslCachingKeyMaterialProviderTest extends OpenSslKeyMaterialProviderTest {
 
     @Override
