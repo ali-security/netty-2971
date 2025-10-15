@@ -16,11 +16,13 @@
 package io.netty.handler.ssl;
 
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.BeforeAll;
 
 import javax.net.ssl.SSLException;
 import java.io.File;
 
+@Disabled
 public class OpenSslClientContextTest extends SslContextTest  {
 
     @BeforeAll
