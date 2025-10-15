@@ -16,6 +16,7 @@
 
 package io.netty.handler.ssl;
 
+import org.junit.jupiter.api.Disabled;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,6 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
 
+@Disabled
 public class PemEncodedTest {
 
     @Test

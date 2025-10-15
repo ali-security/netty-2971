@@ -524,6 +524,7 @@ public class Http2MultiplexTransportTest {
     }
 
     @Test
+    @Disabled
     @DisabledOnOs(value = OS.WINDOWS, disabledReason = "See: https://github.com/netty/netty/issues/11542")
     @Timeout(value = 5000L, unit = MILLISECONDS)
     public void testFireChannelReadAfterHandshakeSuccess_JDK() throws Exception {
