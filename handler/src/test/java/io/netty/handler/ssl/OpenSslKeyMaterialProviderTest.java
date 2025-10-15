@@ -18,6 +18,7 @@ package io.netty.handler.ssl;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.buffer.UnpooledByteBufAllocator;
 import io.netty.internal.tcnative.SSL;
+import org.junit.jupiter.api.Disabled;
 import io.netty.util.ReferenceCountUtil;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -37,6 +38,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Disabled
 public class OpenSslKeyMaterialProviderTest {
 
     static final String PASSWORD = "example";

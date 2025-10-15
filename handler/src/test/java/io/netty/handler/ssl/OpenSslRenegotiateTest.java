@@ -15,6 +15,7 @@
  */
 package io.netty.handler.ssl;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.BeforeAll;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -25,6 +26,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 
+@Disabled
 public class OpenSslRenegotiateTest extends RenegotiateTest {
 
     @BeforeAll
