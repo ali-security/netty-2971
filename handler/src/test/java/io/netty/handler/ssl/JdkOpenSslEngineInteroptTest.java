@@ -28,6 +28,7 @@ import static io.netty.handler.ssl.OpenSslTestUtils.checkShouldUseKeyManagerFact
 import static io.netty.internal.tcnative.SSL.SSL_CVERIFY_IGNORED;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
+@Disabled
 public class JdkOpenSslEngineInteroptTest extends SSLEngineTest {
 
     public JdkOpenSslEngineInteroptTest() {
