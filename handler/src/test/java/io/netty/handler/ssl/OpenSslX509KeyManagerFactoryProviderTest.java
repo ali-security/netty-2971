@@ -15,11 +15,9 @@
  */
 package io.netty.handler.ssl;
 
-import org.junit.jupiter.api.Disabled;
 import javax.net.ssl.KeyManagerFactory;
 import java.security.KeyStore;
 
-@Disabled
 public class OpenSslX509KeyManagerFactoryProviderTest extends OpenSslCachingKeyMaterialProviderTest {
 
     @Override

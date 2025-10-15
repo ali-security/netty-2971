@@ -16,7 +16,6 @@
 
 package io.netty.handler.ssl;
 
-import org.junit.jupiter.api.Disabled;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
@@ -393,7 +392,6 @@ public class SslHandlerTest {
         assertThat(promise.cause(), is(instanceOf(SSLException.class)));
     }
 
-    @Disabled
     @Test
     public void testReleaseSslEngine() throws Exception {
         OpenSsl.ensureAvailability();
@@ -1008,28 +1006,24 @@ public class SslHandlerTest {
         }
     }
 
-    @Disabled
     @Test
     public void testHandshakeWithExecutorThatExecuteDirectlyOpenSsl() throws Throwable {
         OpenSsl.ensureAvailability();
         testHandshakeWithExecutor(DIRECT_EXECUTOR, SslProvider.OPENSSL, false);
     }
 
-    @Disabled
     @Test
     public void testHandshakeWithImmediateExecutorOpenSsl() throws Throwable {
         OpenSsl.ensureAvailability();
         testHandshakeWithExecutor(ImmediateExecutor.INSTANCE, SslProvider.OPENSSL, false);
     }
 
-    @Disabled
     @Test
     public void testHandshakeWithImmediateEventExecutorOpenSsl() throws Throwable {
         OpenSsl.ensureAvailability();
         testHandshakeWithExecutor(ImmediateEventExecutor.INSTANCE, SslProvider.OPENSSL, false);
     }
 
-    @Disabled
     @Test
     public void testHandshakeWithExecutorOpenSsl() throws Throwable {
         OpenSsl.ensureAvailability();
@@ -1066,28 +1060,24 @@ public class SslHandlerTest {
         }
     }
 
-    @Disabled
     @Test
     public void testHandshakeMTLSWithExecutorThatExecuteDirectlyOpenSsl() throws Throwable {
         OpenSsl.ensureAvailability();
         testHandshakeWithExecutor(DIRECT_EXECUTOR, SslProvider.OPENSSL, true);
     }
 
-    @Disabled
     @Test
     public void testHandshakeMTLSWithImmediateExecutorOpenSsl() throws Throwable {
         OpenSsl.ensureAvailability();
         testHandshakeWithExecutor(ImmediateExecutor.INSTANCE, SslProvider.OPENSSL, true);
     }
 
-    @Disabled
     @Test
     public void testHandshakeMTLSWithImmediateEventExecutorOpenSsl() throws Throwable {
         OpenSsl.ensureAvailability();
         testHandshakeWithExecutor(ImmediateEventExecutor.INSTANCE, SslProvider.OPENSSL, true);
     }
 
-    @Disabled
     @Test
     public void testHandshakeMTLSWithExecutorOpenSsl() throws Throwable {
         OpenSsl.ensureAvailability();
@@ -1269,7 +1259,6 @@ public class SslHandlerTest {
     }
 
     @Test
-    @Disabled
     @Timeout(value = 5000, unit = TimeUnit.MILLISECONDS)
     public void testSessionTicketsWithTLSv12() throws Throwable {
         testSessionTickets(SslProvider.OPENSSL, SslProtocols.TLS_v1_2, true);
@@ -1283,7 +1272,6 @@ public class SslHandlerTest {
     }
 
     @Test
-    @Disabled
     @Timeout(value = 5000, unit = TimeUnit.MILLISECONDS)
     public void testSessionTicketsWithTLSv12AndNoKey() throws Throwable {
         testSessionTickets(SslProvider.OPENSSL, SslProtocols.TLS_v1_2, false);
@@ -1578,14 +1566,12 @@ public class SslHandlerTest {
         testHandshakeFailureCipherMissmatch(SslProvider.JDK, true);
     }
 
-    @Disabled
     @Test
     public void testHandshakeFailureCipherMissmatchTLSv12OpenSsl() throws Exception {
         OpenSsl.ensureAvailability();
         testHandshakeFailureCipherMissmatch(SslProvider.OPENSSL, false);
     }
 
-    @Disabled
     @Test
     public void testHandshakeFailureCipherMissmatchTLSv13OpenSsl() throws Exception {
         OpenSsl.ensureAvailability();
@@ -1700,7 +1686,6 @@ public class SslHandlerTest {
         testSslCompletionEvents(SslProvider.JDK, SslProtocols.TLS_v1_2, false);
     }
 
-    @Disabled
     @Test
     public void testSslCompletionEventsTls12Openssl() throws Exception {
         OpenSsl.ensureAvailability();
@@ -1715,7 +1700,6 @@ public class SslHandlerTest {
         testSslCompletionEvents(SslProvider.JDK, SslProtocols.TLS_v1_3, false);
     }
 
-    @Disabled
     @Test
     public void testSslCompletionEventsTls13Openssl() throws Exception {
         OpenSsl.ensureAvailability();
