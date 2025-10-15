@@ -81,4 +81,5 @@ jobs:
         with:
           name: target
           path: |
+            build.output
             /extracted-jars/**/*.jar
