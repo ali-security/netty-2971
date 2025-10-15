@@ -19,7 +19,6 @@ import io.netty.buffer.UnpooledByteBufAllocator;
 import io.netty.handler.ssl.util.CachedSelfSignedCertificate;
 import io.netty.handler.ssl.util.SelfSignedCertificate;
 import io.netty.util.CharsetUtil;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
@@ -52,7 +51,6 @@ public class SslContextBuilderTest {
         testClientContextFromFile(SslProvider.JDK);
     }
 
-    @Disabled
     @Test
     public void testClientContextFromFileOpenssl() throws Exception {
         OpenSsl.ensureAvailability();
@@ -64,7 +62,6 @@ public class SslContextBuilderTest {
         testClientContext(SslProvider.JDK);
     }
 
-    @Disabled
     @Test
     public void testClientContextOpenssl() throws Exception {
         OpenSsl.ensureAvailability();
@@ -76,7 +73,6 @@ public class SslContextBuilderTest {
         testServerContextWithCombinedCertAndKeyInPem(SslProvider.JDK);
     }
 
-    @Disabled
     @Test
     public void testCombinedPemFileClientContextOpenssl() throws Exception {
         OpenSsl.ensureAvailability();
@@ -88,7 +84,6 @@ public class SslContextBuilderTest {
         testKeyStoreType(SslProvider.JDK);
     }
 
-    @Disabled
     @Test
     public void testKeyStoreTypeOpenssl() throws Exception {
         OpenSsl.ensureAvailability();
@@ -100,7 +95,6 @@ public class SslContextBuilderTest {
         testServerContextFromFile(SslProvider.JDK);
     }
 
-    @Disabled
     @Test
     public void testServerContextFromFileOpenssl() throws Exception {
         OpenSsl.ensureAvailability();
@@ -112,7 +106,6 @@ public class SslContextBuilderTest {
         testServerContext(SslProvider.JDK);
     }
 
-    @Disabled
     @Test
     public void testServerContextOpenssl() throws Exception {
         OpenSsl.ensureAvailability();
@@ -124,7 +117,6 @@ public class SslContextBuilderTest {
         testContextFromManagers(SslProvider.JDK);
     }
 
-    @Disabled
     @Test
     public void testContextFromManagersOpenssl() throws Exception {
         OpenSsl.ensureAvailability();
@@ -228,7 +220,6 @@ public class SslContextBuilderTest {
         engine.closeOutbound();
     }
 
-    @Disabled
     @Test
     public void testInvalidCipherJdk() throws Exception {
         OpenSsl.ensureAvailability();
@@ -240,7 +231,6 @@ public class SslContextBuilderTest {
         });
     }
 
-    @Disabled
     @Test
     public void testInvalidCipherOpenSSL() throws Exception {
         OpenSsl.ensureAvailability();
