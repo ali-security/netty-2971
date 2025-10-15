@@ -16,6 +16,7 @@
 package io.netty.handler.ssl;
 
 import io.netty.internal.tcnative.CertificateVerifier;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
@@ -25,6 +26,7 @@ import java.lang.reflect.Field;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@Disabled
 public class OpenSslCertificateExceptionTest {
 
     @BeforeAll

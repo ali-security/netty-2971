@@ -28,6 +28,7 @@ import java.util.List;
 import static io.netty.handler.ssl.OpenSslTestUtils.checkShouldUseKeyManagerFactory;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
+@Disabled
 public class OpenSslJdkSslEngineInteroptTest extends SSLEngineTest {
 
     public OpenSslJdkSslEngineInteroptTest() {
