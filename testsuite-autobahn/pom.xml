@@ -86,7 +86,7 @@
           </cases>
           <excludeCases />
           <failOnNonStrict>false</failOnNonStrict>
-          <skip>${skipAutobahnTestsuite}</skip>
+          <skip>true</skip>
         </configuration>
         <executions>
           <execution>

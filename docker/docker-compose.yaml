@@ -31,10 +31,12 @@ services:
     <<: *common
     command: '/bin/bash -cl "
       ./mvnw -B -ntp clean install -Dio.netty.testsuite.badHost=netty.io -Dtcnative.classifier=linux-x86_64-fedora && 
+      find . -type f -path \"*/target/*.jar\" -print0 | xargs -0 -I {} cp --parents {} /extracted-jars/ &&
+      echo listing extracted jars: &&
+      ls -la /extracted-jars/ &&
       cd testsuite-shading &&
       ../mvnw -B -ntp integration-test failsafe:verify -Dtcnative.classifier=linux-x86_64-fedora
     "'
-
   deploy:
     <<: *common
     command: /bin/bash -cl "./mvnw -B -ntp clean deploy -DskipTests=true"

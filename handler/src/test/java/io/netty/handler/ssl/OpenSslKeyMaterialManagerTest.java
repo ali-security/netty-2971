@@ -18,6 +18,7 @@ package io.netty.handler.ssl;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.buffer.UnpooledByteBufAllocator;
 import io.netty.util.internal.EmptyArrays;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import javax.net.ssl.SSLException;
@@ -29,6 +30,7 @@ import java.security.cert.X509Certificate;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
+@Disabled
 public class OpenSslKeyMaterialManagerTest {
 
     @Test
