@@ -17,10 +17,10 @@ name: Build project
 
 on:
   push:
-    branches: [ "main" , "4.2" ]
+    branches: [ "main"]
 
-  # schedule:
-  #   - cron: '30 1 * * 1'  # At 01:30 on Monday, every Monday.
+  schedule:
+    - cron: '30 1 * * 1'  # At 01:30 on Monday, every Monday.
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -39,12 +39,10 @@ jobs:
         include:
           - setup: linux-x86_64-java11
             docker-compose-build: "-f docker/docker-compose.yaml -f docker/docker-compose.centos-6.111.yaml build"
-            # Bind a host directory to /code in the container to extract built jar files from all modules
-            # This will allow us to access the built jars after the docker-compose run
-            docker-compose-run: "-f docker/docker-compose.yaml -f docker/docker-compose.centos-6.111.yaml run -v ${{ github.workspace }}/extracted-jars:/extracted-jars build"
-          # - setup: linux-x86_64-java11-boringssl-snapshot
-          #   docker-compose-build: "-f docker/docker-compose.yaml -f docker/docker-compose.centos-6.111.yaml build"
-          #   docker-compose-run: "-f docker/docker-compose.yaml -f docker/docker-compose.centos-6.111.yaml run build-boringssl-snapshot"
+            docker-compose-run: "-f docker/docker-compose.yaml -f docker/docker-compose.centos-6.111.yaml run build"
+          - setup: linux-x86_64-java11-boringssl-snapshot
+            docker-compose-build: "-f docker/docker-compose.yaml -f docker/docker-compose.centos-6.111.yaml build"
+            docker-compose-run: "-f docker/docker-compose.yaml -f docker/docker-compose.centos-6.111.yaml run build-boringssl-snapshot"
 
     name: ${{ matrix.setup }}
     steps:
@@ -78,8 +76,9 @@ jobs:
         if: cancelled()
 
       - uses: actions/upload-artifact@v4
+        if: ${{ failure() }}
         with:
           name: target
           path: |
-            build.output
-            /extracted-jars/**/*.jar
+            **/target/surefire-reports/
+            **/hs_err*.log

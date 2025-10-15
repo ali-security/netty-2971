@@ -15,13 +15,11 @@
  */
 package io.netty.handler.ssl;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.BeforeAll;
 
 import javax.net.ssl.SSLException;
 import java.io.File;
 
-@Disabled
 public class OpenSslServerContextTest extends SslContextTest {
 
     @BeforeAll
