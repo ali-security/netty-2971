@@ -15,7 +15,6 @@
  */
 package io.netty.handler.codec.http2;
 
-import org.junit.jupiter.api.Disabled;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
