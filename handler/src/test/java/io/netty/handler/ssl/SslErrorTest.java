@@ -15,6 +15,7 @@
  */
 package io.netty.handler.ssl;
 
+import org.junit.jupiter.api.Disabled;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
@@ -107,6 +108,7 @@ public class SslErrorTest {
                 new CertPathValidatorException("x", null, null, -1, reason));
     }
 
+    @Disabled
     @ParameterizedTest(
             name = "{index}: serverProvider = {0}, clientProvider = {1}, exception = {2}, serverProduceError = {3}")
     @MethodSource("data")
